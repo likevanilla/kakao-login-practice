@@ -22,7 +22,7 @@ function CallbackPage() {
                 const accessToken = await exchangeToken(code);
                 const profile = await fetchProfile(accessToken);
                 saveSession(accessToken, profile);
-                navigate("/", { replace: true });
+                navigate("/home", { replace: true });
             } catch (error) {
                 console.error(error);
                 setErrorMessage("로그인 처리 중 문제가 발생했습니다. 콘솔 설정(Redirect URI, Client Secret)을 확인해주세요.");
